@@ -20,7 +20,7 @@ def mask_image():
 	ap.add_argument("-i", "--image", required=True,
 		help="path to input image")
 	ap.add_argument("-m", "--model", type=str,
-		default="mask_detector_2.model",
+		default="mask_detector.model",
 		help="path to trained face mask detector model")
 	ap.add_argument("-c", "--confidence", type=float, default=0.5,
 	help="minimum probability to filter weak detections")
@@ -74,8 +74,13 @@ def mask_image():
 			# extract the face ROI, convert it from BGR to RGB channel
 			# ordering, resize it and preprocess it
 			face = image_ogr[startY:endY, startX:endX]
-			# face_img = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
-			# face_img = cv2.resize(face, (150, 150))
+			
+			# face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
+			# face = cv2.resize(face, (IMG_HEIGHT, IMG_WIDTH))
+			# face = face/255.0
+			# face = np.reshape(face,(1,IMG_HEIGHT,IMG_WIDTH,3))
+
+			
 			cv2.imwrite("face.jpg", face)
 			face = image.load_img("face.jpg", target_size=(IMG_HEIGHT, IMG_WIDTH))
 			face = image.img_to_array(face)
