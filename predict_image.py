@@ -75,11 +75,10 @@ def mask_image():
 			# ordering, resize it and preprocess it
 			face = image_ogr[startY:endY, startX:endX]
 			
-			# face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
 			# face = cv2.resize(face, (IMG_HEIGHT, IMG_WIDTH))
 			# face = face/255.0
 			# face = np.reshape(face,(1,IMG_HEIGHT,IMG_WIDTH,3))
-
+			# face = np.vstack([face])
 			
 			cv2.imwrite("face.jpg", face)
 			face = image.load_img("face.jpg", target_size=(IMG_HEIGHT, IMG_WIDTH))

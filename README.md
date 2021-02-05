@@ -16,6 +16,10 @@ Việc phát hiện xem hình ảnh có người đeo khẩu trang hay không l�
 Chạy file **face_mask_detector.ipynb**
 Sử dụng jupyter notebook trên máy tính của bạn hoặc có thể sử dụng colab của google.
 
+Train xong model bạn sẽ có được file như sau:
+
+https://drive.google.com/drive/folders/18LO3lU8KSikApleR1Z_8R4f6iQXFjZ5V?usp=sharing
+
 ## Kiểm tra
 Kiểm tra với dữ liệu vào là hình ảnh. Chạy file **predict_image.py**:
 
