@@ -20,7 +20,7 @@ def mask_image():
 	ap.add_argument("-i", "--image", required=True,
 		help="path to input image")
 	ap.add_argument("-m", "--model", type=str,
-		default="version_2/mask_detector_3.model",
+		default="version_2/mask_detector.model",
 		help="path to trained face mask detector model")
 	ap.add_argument("-c", "--confidence", type=float, default=0.5,
 	help="minimum probability to filter weak detections")
