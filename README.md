@@ -10,18 +10,18 @@ Từ lý do đấy, tôi đã quyết định xây dựng một mô hình Mạng
 Việc phát hiện xem hình ảnh có người đeo khẩu trang hay không là một bài toán phân loại. Chúng ta phải phân loại các hình ảnh giữa 2 lớp rời rạc: Lớp có chứa khẩu trang và lớp không có.
 
 ## Dữ liệu
-Để xây dựng mô hình này, tôi sẽ sử dụng tập dữ liệu về khẩu trang. Nó bao gồm khoảng 1.376 hình ảnh với 690 hình ảnh có người đeo khẩu trang và 686 hình ảnh có người không đeo khẩu trang.
+Để xây dựng mô hình này, tôi sẽ sử dụng tập dữ liệu mặt người khi đeo tkhẩu trang. Nó bao gồm khoảng hơn 4.000 hình ảnh với khoảng 2.000 hình ảnh có người đeo khẩu trang và 2.000 hình ảnh mặt người không đeo khẩu trang.
 
 ## Cài đặt
-Chạy file **face_mask_detector.ipynb**
-Sử dụng jupyter notebook trên máy tính của bạn hoặc có thể sử dụng colab của google.
+
+Sử dụng jupyter notebook trên máy tính của bạn hoặc có thể sử dụng colab của google để chạy file **train_model_1.ipynb** (version 1), **train_model_2.ipynb** (version 2)
 
 Train xong model bạn sẽ có được file như sau:
 
 https://drive.google.com/drive/folders/18LO3lU8KSikApleR1Z_8R4f6iQXFjZ5V?usp=sharing
 
 ## Kiểm tra
-Kiểm tra với dữ liệu vào là hình ảnh. Chạy file **predict_image.py**:
+Kiểm tra với dữ liệu vào là hình ảnh. Chạy file **predict_image.py** với tham số đầu vào yêu cầu là địa chỉ ảnh cần predict và model sau khi train:
 
 ```python
 python predict_image.py --image test_images/face_mask_test_1.png

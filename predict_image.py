@@ -20,7 +20,7 @@ def mask_image():
 	ap.add_argument("-i", "--image", required=True,
 		help="path to input image")
 	ap.add_argument("-m", "--model", type=str,
-		default="mask_detector.model",
+		default="version_2/mask_detector_3.model",
 		help="path to trained face mask detector model")
 	ap.add_argument("-c", "--confidence", type=float, default=0.5,
 	help="minimum probability to filter weak detections")
@@ -74,16 +74,18 @@ def mask_image():
 			# extract the face ROI, convert it from BGR to RGB channel
 			# ordering, resize it and preprocess it
 			face = image_ogr[startY:endY, startX:endX]
-			
-			# face = cv2.resize(face, (IMG_HEIGHT, IMG_WIDTH))
-			# face = face/255.0
-			# face = np.reshape(face,(1,IMG_HEIGHT,IMG_WIDTH,3))
-			# face = np.vstack([face])
-			
-			cv2.imwrite("face.jpg", face)
-			face = image.load_img("face.jpg", target_size=(IMG_HEIGHT, IMG_WIDTH))
+
+			face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
+			face = cv2.resize(face, (IMG_HEIGHT, IMG_WIDTH))
 			face = image.img_to_array(face)
+			face = preprocess_input(face)
 			face = np.expand_dims(face, axis = 0) 
+
+			
+			# cv2.imwrite("test_images/face.jpg", face)
+			# face = image.load_img("test_images/face.jpg", target_size=(IMG_HEIGHT, IMG_WIDTH))
+			# face = image.img_to_array(face)
+			# face = np.expand_dims(face, axis = 0) 
 
 			# pass the face through the model to determine if the face
 			# has a mask or not

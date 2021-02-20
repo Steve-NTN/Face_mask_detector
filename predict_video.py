@@ -60,14 +60,14 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 			# extract the face ROI, convert it from BGR to RGB channel
 			# ordering, resize it to 224x224, and preprocess it
 			face = frame[startY:endY, startX:endX]
-			# face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
-			
-			# face = cv2.resize(face, (150, 150))
-			cv2.imwrite("face.jpg", face)
-			face = image.load_img("face.jpg", target_size=(IMG_HEIGHT, IMG_WIDTH))
-			face = image.img_to_array(face)
-			# face = preprocess_input(face)
-			
+			face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
+			face = cv2.resize(face, (IMG_HEIGHT, IMG_WIDTH))
+			face = img_to_array(face)
+			face = preprocess_input(face)
+
+			# cv2.imwrite("test_images/face.jpg", face)
+			# face = image.load_img("test_images/face.jpg", target_size=(150, 150))
+
 			# add the face and bounding boxes to their respective
 			# lists
 			faces.append(face)
@@ -80,16 +80,16 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 		# in the above `for` loop
 		faces = np.array(faces, dtype="float32")
 		preds = maskNet.predict(faces, batch_size=32)
-		print(preds)
 
 	# return a 2-tuple of the face locations and their corresponding
 	# locations
 	return (locs, preds)
 
+
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-m", "--model", type=str,
-	default="mask_detector.model",
+	default="version_2/mask_detector_2.model",
 	help="path to trained face mask detector model")
 ap.add_argument("-c", "--confidence", type=float, default=0.5,
 	help="minimum probability to filter weak detections")
