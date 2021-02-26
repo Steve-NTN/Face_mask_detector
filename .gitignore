@@ -1,7 +1,5 @@
-version_1/mask_detector.model
-version_2/mask_detector.model
-version_1/data
-version_2/data
+mask_detector.model
+data/
 /.vscode
 /.python-version
 /face.jpg

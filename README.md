@@ -10,7 +10,7 @@ Từ lý do đấy, tôi đã quyết định xây dựng một mô hình Mạng
 Việc phát hiện xem hình ảnh có người đeo khẩu trang hay không là một bài toán phân loại. Chúng ta phải phân loại các hình ảnh giữa 2 lớp rời rạc: Lớp có chứa khẩu trang và lớp không có.
 
 ## Dữ liệu
-Để xây dựng mô hình này, tôi sẽ sử dụng tập dữ liệu mặt người khi đeo tkhẩu trang. Version 1 bao gồm khoảng 1.300 ảnh, 1 nửa là ảnh mặt đeo khẩu trang và 1 nửa không đeo. Còn version 2 hơn 4.000 hình ảnh với khoảng 2.000 hình ảnh có người đeo khẩu trang và 2.000 hình ảnh mặt người không đeo khẩu trang.
+Để xây dựng mô hình này, tôi sẽ sử dụng tập dữ liệu mặt người khi đeo tkhẩu trang. Có hơn 4.000 hình ảnh với khoảng 2.000 hình ảnh có người đeo khẩu trang và 2.000 hình ảnh mặt người không đeo khẩu trang.
 
 Data ở link sau:
 
@@ -18,7 +18,7 @@ https://drive.google.com/drive/folders/1e92CZlUP7HfNJMOPKGbl-t6BmFPYAr_L?usp=sha
 
 ## Cài đặt
 
-Sử dụng jupyter notebook trên máy tính của bạn hoặc có thể sử dụng colab của google để chạy file **train_model_1.ipynb** (version 1), **train_model_2.ipynb** (version 2)
+Sử dụng jupyter notebook trên máy tính của bạn hoặc có thể sử dụng colab của google để chạy file **train_model.ipynb**
 
 Train xong model bạn sẽ có được file như sau:
 
